@@ -6,10 +6,16 @@ namespace Empresa
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine("Como voce esta hoje");
-            Console.WriteLine("Tenha um bom dia");
-            Console.WriteLine("Te desejo sorte");
+            Cliente diogo = new Cliente();
+            diogo.nome = "diogo";
+
+            Conta umaConta = new Conta();
+            umaConta.titular = diogo;
+            umaConta.titular.rg = "3565";
+
+            Console.WriteLine(umaConta.titular.nome);
+            Cliente c2 = new Cliente(;
+
         }
     }
 }

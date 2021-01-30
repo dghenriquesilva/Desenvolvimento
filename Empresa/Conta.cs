@@ -7,9 +7,9 @@ namespace Empresa
     class Conta
     {
         // atributos da classe
-        public int numero;
-        public string titular;
-        public double saldo;
+        public int numero { get; set; }
+        public Cliente titular;
+        public double saldo = 100.0;
 
 
         // metodo sacar
@@ -29,6 +29,21 @@ namespace Empresa
         public void Deposita(double valor)
         {
             this.saldo += valor;
+        }
+
+        // metodo Transfere
+        public void Transfere(double valor, Conta destino)
+        {
+            if(this.Sacar(valor))
+            {
+                destino.Deposita(valor);
+            }
+        }
+
+
+        public override string ToString()
+        {
+            return this.saldo.ToString("@");
         }
     }
 }
